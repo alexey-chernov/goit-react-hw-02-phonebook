@@ -4,7 +4,7 @@ import ContactForm from './components/FormContacts';
 import ContactList from './components/ListContacts';
 import Filter from './components/Filter';
 import { v4 as uuidv4 } from 'uuid';
-import './App.css';
+//import './App.css';
 
 
 class App extends Component {
