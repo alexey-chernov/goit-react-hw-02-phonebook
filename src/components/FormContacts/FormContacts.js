@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import InputMask from 'react-input-mask';
 
 import styles from './FormContacts.module.css';
 
@@ -29,21 +30,22 @@ class FormContacts extends Component {
             <form className={styles.Form} onSubmit={this.handleSubmit}>
                 <label className={styles.Label}>
                     Ім'я
-                    <input
+                    <InputMask
                         className={styles.Input}
                         type="text"
                         name="name"
-                        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ]) ? [a-zA-Zа-яА-Я]*)*$"
+                        //pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ]) ? [a-zA-Zа-яА-Я]*)*$"
+                        maxLength='20'
+                        placeholder="Sylvester Stalone"
                         title="Ім'я може складатись лише із букв, апострофа, тире та пробілів. Наприклад Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan і т.д."
                         required
                         value={name}
                         onChange={this.handleChange}
-                        placeholder="Ivan Ivanov"
                     />
                 </label>
                 <label className={styles.Label}>
                     Номер
-                    <input
+                    <InputMask
                         className={styles.Input}
                         type="tel"
                         name="number"
@@ -52,7 +54,8 @@ class FormContacts extends Component {
                         required
                         onChange={this.handleChange}
                         value={number}
-                        placeholder="+38 (011) 123-45-"
+                        placeholder="+38 (099) 999-99-99"
+                        mask="+38 (099) 999-99-99"
                     />
                 </label>
                 <button className={styles.Button} type="submit">

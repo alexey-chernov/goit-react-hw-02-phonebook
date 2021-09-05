@@ -4,7 +4,6 @@ import ContactForm from './components/FormContacts';
 import ContactList from './components/ListContacts';
 import Filter from './components/Filter';
 import { v4 as uuidv4 } from 'uuid';
-//import './App.css';
 
 
 class App extends Component {
@@ -43,6 +42,7 @@ class App extends Component {
             this.setState(({ contacts }) => ({
                 contacts: [...contacts, contact],
             }));
+
         }
     };
 
